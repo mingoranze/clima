@@ -1,0 +1,37 @@
+const WEATHER_CODE_DESCRIPTIONS: Readonly<Record<number, string>> = {
+  0: 'Céu limpo',
+  1: 'Predominantemente limpo',
+  2: 'Parcialmente nublado',
+  3: 'Nublado',
+  45: 'Neblina',
+  48: 'Neblina com geada',
+  51: 'Garoa leve',
+  53: 'Garoa moderada',
+  55: 'Garoa intensa',
+  56: 'Garoa congelante leve',
+  57: 'Garoa congelante intensa',
+  61: 'Chuva leve',
+  63: 'Chuva moderada',
+  65: 'Chuva forte',
+  66: 'Chuva congelante leve',
+  67: 'Chuva congelante forte',
+  71: 'Neve leve',
+  73: 'Neve moderada',
+  75: 'Neve forte',
+  77: 'Grãos de neve',
+  80: 'Pancadas de chuva leves',
+  81: 'Pancadas de chuva moderadas',
+  82: 'Pancadas de chuva violentas',
+  85: 'Pancadas de neve leves',
+  86: 'Pancadas de neve fortes',
+  95: 'Tempestade leve ou moderada',
+  96: 'Tempestade com granizo leve',
+  99: 'Tempestade com granizo forte',
+}
+
+export const UNKNOWN_WEATHER_DESCRIPTION = 'Condição desconhecida'
+
+/** Converte um código WMO (PRD §2.5) em descrição em português. */
+export function getWeatherDescription(code: number): string {
+  return WEATHER_CODE_DESCRIPTIONS[code] ?? UNKNOWN_WEATHER_DESCRIPTION
+}
