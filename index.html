@@ -21,7 +21,16 @@
       </form>
     </header>
 
-    <main class="card" id="weather-card">
+    <main class="card" id="weather-card" data-state="empty" aria-live="polite">
+      <div class="state state--empty" id="empty-state">
+        <p class="state__message">Pesquise uma cidade para ver o clima</p>
+      </div>
+
+      <div class="state state--loading" id="loading-state" role="status">
+        <span class="spinner" aria-hidden="true"></span>
+        <p class="state__message">Carregando...</p>
+      </div>
+
       <aside class="sidebar" id="sidebar">
         <p class="sidebar__temperature" id="temperature"></p>
         <p class="sidebar__location" id="location"></p>
