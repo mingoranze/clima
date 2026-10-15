@@ -6,7 +6,55 @@
     <title>Clima</title>
   </head>
   <body>
-    <div id="app"></div>
+    <header class="search">
+      <form id="search-form" class="search__form" role="search">
+        <label for="search-input" class="visually-hidden">Cidade</label>
+        <input
+          id="search-input"
+          class="search__input"
+          type="text"
+          name="city"
+          placeholder="Digite o nome da cidade"
+          autocomplete="off"
+        />
+        <button id="search-button" class="search__button" type="submit">Buscar</button>
+      </form>
+    </header>
+
+    <main class="card" id="weather-card">
+      <aside class="sidebar" id="sidebar">
+        <p class="sidebar__temperature" id="temperature"></p>
+        <p class="sidebar__location" id="location"></p>
+        <p class="sidebar__date" id="current-date"></p>
+        <p class="sidebar__daynight" id="day-night">
+          <span class="sidebar__daynight-icon" id="day-night-icon" aria-hidden="true"></span>
+          <span id="day-night-label"></span>
+        </p>
+        <p class="sidebar__condition" id="condition"></p>
+      </aside>
+
+      <section class="details" id="details" aria-label="Detalhes do clima">
+        <dl class="details__grid">
+          <div class="details__item">
+            <dt class="details__label">Umidade</dt>
+            <dd class="details__value" id="humidity"></dd>
+          </div>
+          <div class="details__item">
+            <dt class="details__label">Sensação térmica</dt>
+            <dd class="details__value" id="apparent-temperature"></dd>
+          </div>
+          <div class="details__item">
+            <dt class="details__label">Precipitação</dt>
+            <dd class="details__value" id="precipitation"></dd>
+          </div>
+          <div class="details__item">
+            <dt class="details__label">Vento</dt>
+            <dd class="details__value" id="wind"></dd>
+          </div>
+        </dl>
+      </section>
+    </main>
+
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>

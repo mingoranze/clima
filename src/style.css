@@ -1,1 +1,179 @@
-/* Estilos globais — implementados na Task 09 */
+:root {
+  /* Paleta: colorio.co/palette/383838-d1ddf0-7b849d-49a794-93d7b4 */
+  --color-charcoal: #383838;
+  --color-mist: #d1ddf0;
+  --color-slate: #7b849d;
+  --color-teal: #49a794;
+  --color-mint: #93d7b4;
+
+  --color-page-bg: var(--color-charcoal);
+  --color-card-bg: #ffffff;
+  --color-text-light: var(--color-mist);
+  --color-text-dark: var(--color-charcoal);
+  --color-text-muted: var(--color-slate);
+  --color-surface-muted: var(--color-mint);
+  --color-accent: var(--color-teal);
+  --color-accent-hover: var(--color-mint);
+
+  --space-1: 8px;
+  --space-2: 16px;
+  --space-3: 24px;
+  --space-4: 32px;
+  --space-6: 48px;
+
+  --radius-card: 16px;
+  --radius-control: 8px;
+
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  line-height: 1.5;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  padding: var(--space-6) var(--space-2);
+  background: var(--color-page-bg);
+  color: var(--color-text-light);
+}
+
+p,
+dl,
+dd {
+  margin: 0;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Área de busca — sem background próprio */
+.search {
+  max-width: 800px;
+  margin: 0 auto var(--space-4);
+}
+
+.search__form {
+  display: flex;
+  gap: var(--space-1);
+}
+
+.search__input {
+  flex: 1;
+  min-width: 0;
+  padding: var(--space-1) var(--space-2);
+  font: inherit;
+  color: var(--color-text-light);
+  background: transparent;
+  border: 1px solid var(--color-slate);
+  border-radius: var(--radius-control);
+}
+
+.search__input::placeholder {
+  color: var(--color-slate);
+}
+
+.search__input:focus {
+  outline: none;
+  border-color: var(--color-mint);
+}
+
+.search__button {
+  padding: var(--space-1) var(--space-3);
+  font: inherit;
+  font-weight: 600;
+  color: var(--color-charcoal);
+  background: var(--color-accent);
+  border: none;
+  border-radius: var(--radius-control);
+  cursor: pointer;
+}
+
+.search__button:hover {
+  background: var(--color-accent-hover);
+}
+
+/* Card principal */
+.card {
+  display: flex;
+  gap: var(--space-4);
+  max-width: 800px;
+  margin: 0 auto;
+  padding: var(--space-4);
+  background: var(--color-card-bg);
+  color: var(--color-text-dark);
+  border-radius: var(--radius-card);
+}
+
+/* Sidebar */
+.sidebar {
+  display: flex;
+  flex: 0 0 240px;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.sidebar__temperature {
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.sidebar__location {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.sidebar__date,
+.sidebar__condition {
+  color: var(--color-text-muted);
+}
+
+.sidebar__daynight {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+}
+
+/* Área principal */
+.details {
+  flex: 1;
+}
+
+.details__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-2);
+}
+
+.details__item {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  padding: var(--space-2);
+  background: var(--color-surface-muted);
+  border-radius: var(--radius-control);
+}
+
+.details__label {
+  font-weight: 400;
+  color: var(--color-text-dark);
+}
+
+.details__value {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
